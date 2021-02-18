@@ -1,0 +1,27 @@
+
+<div class="container">
+    <app-errors [errData]="errorsObject"></app-errors>
+    <form [formGroup]="subsubcategoryForm">
+    <mat-form-field style="width:100%">
+    <input type="text" matInput placeholder="SubSubCategory Name"  formControlName="subsubcategoryname" name="f1" autocomplete="off">
+    </mat-form-field><br>
+    <mat-form-field style="width:100%">
+        <mat-label>Select Sub Category</mat-label>
+        <mat-select [(ngModel)]="selectedValue1" name="f1" formControlName="subcategoryname">
+          <mat-option *ngFor="let subcategory of subcategorys" [value]="subcategory._id">
+            {{subcategory.sub_category_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+  
+    <button mat-raised-button class="btn-style" (click)="insertsubSubCategory()">Enter Sub Category</button> 
+    </form>
+    <br>
+    <ag-grid-angular [rowData]="subsubcategorys" [columnDefs]="colData" 
+    class="ag-theme-alpine" style="height:600px">
+
+</ag-grid-angular>
+ 
+    {{subsubcategorys | json}}
+</div>

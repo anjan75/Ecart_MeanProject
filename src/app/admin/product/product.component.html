@@ -1,0 +1,82 @@
+
+<div class="container">
+    <h3 style="text-align:center; color:blue">Product Page</h3>
+    <app-errors [errData]="errorsObject"></app-errors>
+    <form [formGroup]="productForm" id="frm1" 
+    (ngSubmit)="formcontclick()" enctype="multipart/form-data" method="post" 
+    action="http://localhost:3000/uploadFileRef/uploadMet">
+
+<div class="row">
+    <div class="col-sm-6">
+        <mat-form-field style="width:100%" >
+            <input type="text" matInput autocomplete="off" placeholder="Product Name"  formControlName="productName"  name="f13" > 
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <input type="text" matInput autocomplete="off" placeholder="Product Price" formControlName="price"  name="f12" >
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <input type="text" matInput autocomplete="off" placeholder="Offer Price" formControlName="offers"  name="f11" >
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <input type="text" matInput autocomplete="off" placeholder="Description" formControlName="description"  name="f10" >
+        </mat-form-field>
+        <mat-form-field style="width:100%"> 
+            <mat-select placeholder="Select Category" (selectionChange)="cat_change(this)" 
+            [(ngModel)]="var_cat" formControlName="cat_id"  name="f9" >
+                <mat-option  *ngFor="let cat of cat_data" [value]="cat._id" >{{cat.category_name}} </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <mat-select placeholder="Select Sub Category" 
+            (selectionChange)="subcat_change(this)" [(ngModel)]="var_subcat" formControlName="subcat_id"  name="f8" > 
+                <ng-container  *ngFor="let subcat of subcat_data">
+                <mat-option  [value]="subcat._id" *ngIf="var_cat == subcat.cat_id">{{subcat.sub_category_name}} </mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field style="width:100%">
+            <mat-select placeholder="Select Sub Sub Cat" formControlName="subsubcat_id"  name="f7">
+                <ng-container  *ngFor="let subsubcat of subsubcat_data" >
+                <mat-option [value]="subsubcat._id" *ngIf="var_subcat == subsubcat.subcat_id" >{{subsubcat.sub_sub_category_name}} </mat-option>
+            </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <button type="submit" class="btn-style" >Insert ProductType</button>
+    </div>
+    <div class="col-sm-6">
+    <mat-form-field style="width:100%">
+        <mat-select placeholder="Select ProductType" formControlName="type"  name="f6"> 
+            <mat-option [value]="1" >Product Type 1</mat-option>
+            <mat-option [value]="2"  >Product Type 2</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field style="width:100%">
+        <mat-select placeholder="Select Brand"  formControlName="brand"  > 
+            <mat-option [value]="1"> 1 brand </mat-option>
+            <mat-option [value]="2">2 brand </mat-option>
+            <mat-option [value]="3">3 brand </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field style="width:100%">
+        <input type="text" matInput placeholder="Size" autocomplete="off"  formControlName="size"  name="f5">
+    </mat-form-field>
+    <mat-form-field style="width:100%">
+        <input type="text" matInput placeholder="Rating" autocomplete="off" formControlName="rating"  name="f4" > 
+    </mat-form-field>
+    <mat-form-field style="width:100%">  
+        <input type="text" matInput placeholder="Offers" autocomplete="off" formControlName="discountPrice"  name="f3" >
+    </mat-form-field>
+    <mat-form-field style="width:100%">
+        <input type="text" matInput placeholder="Colors" autocomplete="off" formControlName="colors"  name="f2" >
+    </mat-form-field>
+        <input type="file" name="file1" multiple="true" >
+    </div>
+</div>
+</form>
+</div>
+
+
+

@@ -1,0 +1,16 @@
+
+    <div class="container">
+    <app-errors [errData]="errorsObject"></app-errors>
+    <form [formGroup]="branform">
+    <mat-form-field style="width:100%">
+    <input type="text" matInput placeholder="Brand Name"  formControlName="brand" name="f1" autocomplete="off">
+    </mat-form-field><br>
+    <button mat-raised-button class="btn-style" (click)="formbrandclick()">Insert Brand</button>
+   </form>
+   <br />
+
+
+
+{{brand | json}}
+</div>
+

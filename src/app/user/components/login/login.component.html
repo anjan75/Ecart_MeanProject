@@ -1,0 +1,29 @@
+<div class="container">
+    <br>
+    <div class="row">
+        
+         
+        <div class="col-sm-12">
+            <form [formGroup]="loginForm" >
+                <input type="text" class="form-control" placeholder="Email"   formControlName="email"/><br>
+            <input type="password" class="form-control" placeholder="Password" 
+            formControlName="password"/><br>
+             
+            <input type="text" class="form-control" placeholder="First Name" 
+            *ngIf="btnTxt=='Register'" formControlName="firstname"/> <br>
+            <input type="text" class="form-control" placeholder="Last Name" 
+            *ngIf="btnTxt=='Register'" formControlName="lastname"/> <br>
+
+            <textarea rows="3" class="form-control" placeholder="Address" formControlName="address"
+            *ngIf="btnTxt=='Register'"></textarea><br>
+
+           <input type="button" value={{btnTxt}} class="btn btn-primary" style="margin-top:-20px;" (click)="funsubmit()">
+          
+            
+            </form>
+           
+        </div>
+    </div>
+</div>
+    
+

@@ -1,0 +1,61 @@
+
+
+<div class="row headerClass h-100">
+    <div class="col-sm-2">
+            <img src="../../../../../assets/homeimages/v-shop-logo2.PNG"  
+            class="img-fluid logo" style="height:80px;width:150px;margin-right: 20px;"/>
+        </div>
+        <div class="col-sm-4">
+      <!--  <div class="input-group">
+            <input type="text"  placeholder="Search this blog" style="width: 300px;margin-top:10px">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" style="margin-top: 10px;">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>-->
+        <div class="input-group" style="margin-top: 10px;">
+            <input type="text" class="form-control search-form" placeholder="Search" >
+             <span class="input-group-btn"><button type="submit" class="btn btn-primary search-btn" name="q">
+                 <i class="fa fa-search"></i>
+                </button></span>
+    
+        </div>
+       </div>
+               
+                
+                <div class="col-sm-2"  style="margin-top:10px;">
+                   
+                </div>
+      
+
+                <div class="col-sm-1"> 
+                    <!--<input type="button" value="Login" class="btn btn-secondary" style="margin-top:10px;" 
+                    routerLink="../us/login" *ngIf="!logser.logintmp" />-->
+                    <button value="Login" class="btn btn-secondary" style=" width:90px;margin-top:10px;color: black;font-weight: bold; background-image: linear-gradient(to right,rgb(230, 201, 173), rgb(255, 94, 0));" 
+                    routerLink="../us/login" *ngIf="!logser.logintmp" ><i class="fa  fa-user fa-fw"></i>Login</button>
+                   <!-- <input type="button" value="Logout" class="btn btn-secondary" style="margin-top:10px;" 
+                    routerLink="../us/login" *ngIf="logser.logintmp" (click)="funLogout()"/>-->
+                    <button value="Logout" class="btn btn-secondary" style="width:120px;margin-top:10px;color:black;font-weight:bold;background-image: linear-gradient(to right,rgb(230, 201, 173), rgb(255, 94, 0));" 
+                    routerLink="../us/login" *ngIf="logser.logintmp" (click)="funLogout()"><i class="fa fa-power-off fa-fw"></i>Logout</button>
+                </div>
+
+                    <div class="col-sm-2">
+               
+                        
+            
+                <!--<input type="button" value="Registration"
+                *ngIf="!logser.logintmp" class="btn btn-secondary" routerLink="../us/reg"/>-->
+                <button value="Register" style="margin-top:10px;color: black;font-weight:bold;background-image: linear-gradient(to right,rgb(230, 201, 173), rgb(255, 94, 0));"
+                *ngIf="!logser.logintmp" class="btn btn-secondary" routerLink="../us/reg"><i class="fa fa-user-plus fa-fw"></i>Register</button>
+          </div>
+          <div  class="col-sm-1" style="margin-top:6px">
+
+            <span (click)="cartIconBtn()" class="fa-stack fa-2x has-badge" >
+                <i class="fa fa-circle fa-stack-2x icon-background" ></i>
+                <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+              </span>
+          </div>
+     
+</div>
+

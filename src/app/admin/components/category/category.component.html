@@ -1,0 +1,21 @@
+<div class="container" >
+    <app-errors [errData]="errorsObject"></app-errors>
+    <form [formGroup]="categoryForm">
+        <mat-form-field style="width:100%">
+            <input type="text" matInput placeholder="Category Name" 
+            formControlName="categoryname" name="f1" autocomplete="off">
+            </mat-form-field>
+            <br>
+            <button mat-raised-button class="btn-style" (click)="insertCategory()">
+                Enter Category
+            </button> 
+            
+    </form>
+    <br />
+    <ag-grid-angular [rowData]="catdata" [columnDefs]="colData" 
+    class="ag-theme-alpine" style="height:600px">
+
+</ag-grid-angular>
+{{catdata | json}}
+</div>
+

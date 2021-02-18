@@ -1,0 +1,13 @@
+<mat-drawer-container style="height:600px">
+    <mat-drawer #cnt1 style="padding:10px;width:200px;background-color:cornflowerblue">
+        <app-menu></app-menu>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar color="primary">
+            <mat-icon (click)="cnt1.toggle()" style="cursor: pointer;">
+                list
+            </mat-icon>
+            </mat-toolbar>
+            <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,16 @@
+.menu{
+    padding:2px;
+    &__items{
+        color:white;
+        text-decoration: none;
+        outline: none;
+        display: block;
+        background-color:rgb(38, 14, 179);
+        padding: 5px 2px;
+        color: white;
+        &--home{
+            background-color:rgb(185, 174, 174);
+            color:black;
+        }
+    }     
+}

@@ -1,0 +1,36 @@
+<p>cart works!</p>
+
+
+{{pro_data | json}}
+<!-- 
+<th rowspan="3"><img src="../../../../assets/uploads/{{item.image_name}}" width="100%"/></th> -->
+<div class="container">
+    <div class="row mt-2" style="border: 1px solid #3e87c7;" *ngFor="let cartinfo of pro_data">
+      <div class="col-md-3">
+        <img src="../../../../assets/uploads/{{cartinfo.image_name[0]}}" alt="" style="height: 200px;width: 200px;">
+     
+        
+      </div>
+      <div class="col-md-6">
+          <div class="row mt-4">
+            <div class="col">
+                <h6>ProductName: {{cartinfo.productName}}</h6> 
+              </div>
+              <div class="col">
+                <h6>Price: {{cartinfo.price}}</h6> 
+              </div>
+              <div class="col">
+                <!-- <h6>Qty:<input type="number" value="0" min="0" max="100"> </h6>  -->
+                Qty: <input type="number" pattern="/^-?\d+\.?\d*$/" value="1" onKeyPress="if(this.value.length==4) return false;" style="width: 64px;height: 25px;"/>
+              </div>
+
+          </div>
+          
+        
+      </div>
+      <div class="col-md-2 mt-3">
+          <span><i class="fa fa-trash-o" aria-hidden="true" style="color: red; font-size:35px;" (click)="delFun(cartinfo._id)"></i></span>
+        <!-- <i class="fa fa-trash-o" aria-hidden="true"></i> -->
+      </div>
+    </div>
+</div>

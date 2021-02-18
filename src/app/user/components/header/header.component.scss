@@ -1,0 +1,45 @@
+.headerClass{
+    background-color: cadetblue;
+}
+.sb-example-1 .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  .sb-example-1 .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  .sb-example-1 .searchTerm:focus{
+    color: #00B4CC;
+  }
+  .sb-example-1 .searchButton i {
+    width: 40px;
+    height: 50px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .search-form {
+    border-radius: 30px 0px 0px 30px;
+    /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+}
+/*to cange only one form and not all give unique class name like  class="search-form" */
+ .search-btn {
+    border-radius: 0px 30px 30px 0px;
+    background-image:  linear-gradient(to right,rgb(230, 201, 173), rgb(255, 94, 0));
+    cursor:pointer;
+}
+.icon-background {
+  color: coral;
+}
+.button1 {border-radius: 40%;}

@@ -1,0 +1,37 @@
+<p>more works!</p>
+
+<div class="container">
+    <div class="row">
+        
+         
+        <div class="col-sm-1">
+          <div *ngFor="let iname of moreInfo.image_name">
+            
+              <img src="../../../../assets/uploads/{{iname}}" width="70px" class="img-fluid img-thumbnail" (click)="bigImg=iname"/>
+          
+          </div>
+        </div>
+       <div class="col-sm-3">
+         <img src="../../../../assets/uploads/{{bigImg}}" width="300px" height="300px" class="img-fluid"/>
+       </div>
+      <div class="col-sm-8">
+      <div>
+       <h2>{{moreInfo.productName}}</h2>
+        <span style="text-decoration:line-through;color:red">{{moreInfo.price|currency:"INR"}}</span>
+        <span style="margin-left: 10px;color:green">{{moreInfo.discountPrice}}</span>
+     </div>
+     <p><span *ngFor="let rat of ratArr" class="fa fa-star" style="color:rgb(240,144,20)"></span>
+       <span *ngIf="halfstr==true" class="fa fa-star-half" style="color:rgb(240,144,20)"></span></p>
+      <p> {{moreInfo.description}}</p>
+     <div><li *ngFor="let off of offer" style="list-style: none;">
+      <img src="../../../../assets/offer.png" width="30px"/>{{off}}
+     </li></div>
+     <div>
+       <button type="button"(click)="funAddtoCart(moreInfo)" value="Add to Cart" style="margin-top: 20px" class="btn btn-primary">
+        <span class="fa fa-shopping-cart"></span>
+      Add to cart
+      </button>
+     </div>
+    </div>
+    </div>
+</div>  
